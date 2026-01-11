@@ -1,0 +1,125 @@
+// {
+//   "name": "the-mapper",
+//   "dockerFile": "../Dockerfile",
+//   "context": "..",
+//   "remoteUser": "root",
+//   "extensions": [
+//     "ms-python.python",
+//     "ms-toolsai.jupyter"
+//   ]
+// }
+
+{
+  "name": "the-mapper",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "dev",
+  "workspaceFolder": "/the_mapper",
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  }
+}
+
+
+// {
+//   "name": "the-mapper",
+//   "dockerFile": "../Dockerfile",
+//   "context": "..",
+//   "remoteUser": "root",
+
+//   "features": {
+//     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+//   },
+//   "mounts": [
+//     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+//   ],
+
+//   // Make host.docker.internal resolvable inside the dev container
+//   "runArgs": ["--add-host=host.docker.internal:host-gateway"],
+
+//   // (Optional) show these in VS Code port view
+//   "forwardPorts": [6333, 6334],
+
+//   // Start (or restart) the Qdrant sidecar on the HOST with published ports.
+//   // Using a named volume for persistence; keep amd64 emulation as requested.
+//   "postStartCommand": "docker rm -f qdrant-sidecar >/dev/null 2>&1 || true && docker run -d --platform=linux/amd64 --name qdrant-sidecar -p 6333:6333 -p 6334:6334 -v qdrant_storage:/qdrant/storage qdrant/qdrant:latest",
+
+//   "postStopCommand": "docker rm -f qdrant-sidecar >/dev/null 2>&1 || true",
+
+//   "customizations": {
+//     "vscode": {
+//       "extensions": [
+//         "ms-python.python",
+//         "ms-toolsai.jupyter",
+//         "ms-azuretools.vscode-docker"
+//       ]
+//     }
+//   }
+// }
+
+
+
+
+
+// {
+//   "name": "the-mapper",
+//   "dockerFile": "../Dockerfile",
+//   "context": "..",
+//   "remoteUser": "root",
+
+//   "features": {
+//     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+//   },
+//   "mounts": [
+//     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+//   ],
+//   "runArgs": [
+//     "--add-host=host.docker.internal:host-gateway"
+//   ],
+//   "forwardPorts": [6333, 6334],
+
+//   "postStartCommand": "docker volume create qdrant_storage >/dev/null 2>&1 || true && docker rm -f qdrant-sidecar >/dev/null 2>&1 || true && docker run -d --platform=linux/amd64 --name qdrant-sidecar -p 6333:6333 -p 6334:6334 -v qdrant_storage:/qdrant/storage qdrant/qdrant:latest",
+//   "postStopCommand": "docker rm -f qdrant-sidecar >/dev/null 2>&1 || true",
+
+//   "customizations": {
+//     "vscode": {
+//       "extensions": [
+//         "ms-python.python",
+//         "ms-toolsai.jupyter"
+//       ]
+//     }
+//   }
+// }
+
+
+// {
+//   "name": "the-mapper",
+//   "dockerFile": "../Dockerfile",
+//   "context": "..",
+//   "remoteUser": "root",
+
+//   "features": {
+//     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+//   },
+//   "mounts": [
+//     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+//   ],
+//   "forwardPorts": [6333, 6334],
+
+//   "postStartCommand": "docker volume create qdrant_storage >/dev/null 2>&1 || true && docker rm -f qdrant-sidecar >/dev/null 2>&1 || true && docker run -d --platform=linux/amd64 --name qdrant-sidecar -p 6333:6333 -p 6334:6334 -v qdrant_storage:/qdrant/storage qdrant/qdrant:latest",
+//   "postStopCommand": "docker rm -f qdrant-sidecar >/dev/null 2>&1 || true",
+
+//   "customizations": {
+//     "vscode": {
+//       "extensions": [
+//         "ms-python.python",
+//         "ms-toolsai.jupyter"
+//       ]
+//     }
+//   }
+// }

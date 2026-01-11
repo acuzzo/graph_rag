@@ -1,3 +1,4 @@
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -54,7 +55,7 @@ tmp/
 sandbox/
 scratch*
 temp*
-dev*
+
 
 # data
 data/
